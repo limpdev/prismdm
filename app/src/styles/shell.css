@@ -253,9 +253,9 @@ button.input:focus-visible { box-shadow: inset 0 0 0 1px var(--accent), 0 0 0 3p
 /* ---- main window shape ------------------------------------------------------
    The main window is undecorated and transparent: it paints its own rounded shell
    (square again when maximized or fullscreen, like native windows). */
-:root { --win-radius: 12px; }
-:root[data-os="windows"] { --win-radius: 8px; }
-:root[data-os="mac"] { --win-radius: 11px; }
+:root { --win-radius: 16px; }
+:root[data-os="windows"] { --win-radius: 16px; }
+:root[data-os="mac"] { --win-radius: 16px; }
 html[data-window="main"],
 html[data-window="main"] body { background: transparent; }
 html[data-window="main"] .win {

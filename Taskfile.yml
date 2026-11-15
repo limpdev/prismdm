@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: "3"
+
+vars:
+  GREETING: Hello, world!
+
+tasks:
+  default:
+    desc: Print a greeting message
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+  pre:
+    desc: prebuild tasks, frontend management
+    cmds:
+      - npm ci --prefix app
+      - npm ci --prefix extension
+      - npm run build --prefix extension
+  build:
+    desc: builds with tauri
+    cmds:
+      - cd app && npm run tauri:build
+  dev:
+    desc: builds with tauri
+    cmds:
+      - cd app && npm run tauri dev
+      # [CTRL|CMD][SHIFT|OPTION][I] - opens inspector
